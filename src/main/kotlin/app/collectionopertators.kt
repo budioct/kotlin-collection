@@ -17,6 +17,6 @@ fun main() {
     listOf("budhi", "oct").forEach { value -> println(value)}
     listOf("budhi", "oct").forEachIndexed {index, value ->
         println("$index = $value")
-    }
+    } // mapIndexed(transform: (index, T) -> R)
 
 }
