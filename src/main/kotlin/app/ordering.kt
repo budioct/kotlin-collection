@@ -23,6 +23,27 @@ fun main() {
     println("sorted ascending: ${list.sorted()}")
     println("sorted descending: ${list.sortedDescending()}")
 
+
+    /**
+     * Ordering : Reverse
+     * ● Di Kotlin, kita bisa mendapatkan collection dengan urutan data terbalik dari data aslinya
+     *
+     * Ordering : Reverse Operator
+     * Ordering Reverse Operator        Keterangan
+     * reversed()                       Membuat collection baru dengan urutan terbalik dari collection aslinya
+     * asReversed()                     Membuat view terhadap collection dengan urutan terbalik, jika collection aslinya berubah, view pun akan ikut berubah
+     */
+
+    val names = mutableListOf("budhi", "oct", "husein", "malik", "ayman", "sodiq")
+    val reversed = names.reversed()
+    val asReversed = names.asReversed()
+
+    names.addFirst("add on first")
+    names.addLast("add on last")
+    println(reversed) // [sodiq, ayman, malik, husein, oct, budhi]
+    println(asReversed) // [add on last, sodiq, ayman, malik, husein, oct, budhi, add on first]
+
+
     /**
      * Ordering : Custom
      * ● Selain menggunakan comparable bawaan kotlin, kita juga bisa membuat comparable sendiri
@@ -47,3 +68,6 @@ fun main() {
 }
 
 data class Fruit(val name: String, val quantity: Int)
+
+
+
