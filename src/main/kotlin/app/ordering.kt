@@ -23,4 +23,27 @@ fun main() {
     println("sorted ascending: ${list.sorted()}")
     println("sorted descending: ${list.sortedDescending()}")
 
+    /**
+     * Ordering : Custom
+     * ● Selain menggunakan comparable bawaan kotlin, kita juga bisa membuat comparable sendiri
+     * ● Ini cocok untuk mengurutkan data yang kita buat sendiri
+     *
+     * Ordering : Custom Operator
+     * Ordering Natural Operator                        Keterangan
+     * sortedBy(selector: (T) -> R)                     Mengurutkan collection secara ascending menggunakan selector
+     * sortedByDescending(selector: (T) -> R)           Mengurutkan collection secara descending menggunakan selector
+     * sortedWith(Comparator<T>)                        Mengurutkan collection dengan Comparator<T>
+     *
+     */
+
+    val fruits: List<Fruit> = listOf(Fruit("apple", 4), Fruit("manggo", 3))
+
+    println(fruits.sortedBy { it.quantity }) // [Fruit(name=manggo, quantity=3), Fruit(name=apple, quantity=4)]
+    println(fruits.sortedByDescending { it.quantity })
+    println(fruits.sortedWith(compareBy { it.quantity })) // [Fruit(name=manggo, quantity=3), Fruit(name=apple, quantity=4)]
+    println(fruits.sortedWith(compareByDescending { it.quantity }))
+    println(fruits.sortedWith(Comparator { a, b -> a.quantity.compareTo(b.quantity) })) // [Fruit(name=manggo, quantity=3), Fruit(name=apple, quantity=4)]
+
 }
+
+data class Fruit(val name: String, val quantity: Int)
