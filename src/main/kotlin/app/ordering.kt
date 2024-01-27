@@ -45,6 +45,22 @@ fun main() {
 
 
     /**
+     * Ordering : Random
+     * ● Di Kotlin, kita juga bisa mengacak isi element di collection
+     *
+     * Ordering : Random Operator
+     * Ordering Random Operator          Keterangan
+     * shuffled()                        Membuat collection baru dengan posisi element random
+     */
+
+    val numbers = (1..10).toList()
+    println(numbers.shuffled())
+    println(numbers.shuffled())
+    println(numbers.shuffled())
+    println(numbers.shuffled())
+
+
+    /**
      * Ordering : Custom
      * ● Selain menggunakan comparable bawaan kotlin, kita juga bisa membuat comparable sendiri
      * ● Ini cocok untuk mengurutkan data yang kita buat sendiri
